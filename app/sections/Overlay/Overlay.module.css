@@ -1,0 +1,69 @@
+@reference '../../globals.css';
+
+.overlay {
+    @apply w-full h-full z-100 bg-neutral-1/20 top-0 left-0 fixed light:bg-neutral-1 dark:bg-neutral-6 flex justify-center items-center;
+    transition: opacity 500ms var(--ease-custom) 10ms;
+}
+
+.overlay[data-display='true'] {
+    opacity: 100%;
+}
+
+.overlay[data-display='false'] {
+    opacity: 0%;
+}
+
+.overlay[data-hide='false'] {
+    transform: translateY(0%);
+}
+
+.overlay[data-hide='true'] {
+    transform: translateY(100%);
+}
+
+.logo {
+    @apply absolute light:stroke-neutral-6 dark:stroke-neutral-1;
+    height: auto;
+    width: min(29.1vh, 87.5vw);
+    z-index: 1;
+    animation: draw_logo 2s var(--ease-custom);
+}
+
+.logo_img {
+    height: auto;
+    width: min(30vh, 90vw);
+    opacity: 1;
+    z-index: 2;
+    animation: fade_in_logo 2s var(--ease-custom);
+}
+
+@keyframes draw_logo {
+    0% {
+        stroke-dasharray: 1;
+        stroke-width: 0px;
+    }
+    10% {
+        stroke-dasharray: 1;
+        stroke-width: 0px;
+    }
+    85% {
+        stroke-dasharray: 2500;
+        stroke-width: 3px;
+    }
+    100% {
+        stroke-dasharray: 2500;
+        stroke-width: 3px;
+    }
+}
+
+@keyframes fade_in_logo {
+    0% {
+        opacity: 0;
+    }
+    85% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

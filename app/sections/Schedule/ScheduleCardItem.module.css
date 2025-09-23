@@ -1,0 +1,9 @@
+@reference '../../globals.css';
+.schedule_wrapper .schedule_prev_change {
+    max-height: 0px;
+    transition: border-color 300ms var(--ease-custom) 0ms, max-height 1000ms var(--ease-custom) 0ms; 
+}
+
+.schedule_wrapper:hover .schedule_prev_change {
+    max-height: 500px;
+}

@@ -1,0 +1,112 @@
+@reference '../../globals.css';
+
+.schedule_selector_item {
+    @apply h-full min-h-[min(var(--size-xl),8dvh)] flex flex-row flex-nowrap justify-between items-center py-(--size-xs) px-(--size-s);
+}
+
+.role_picker,
+.dropdown_placeholder[data-display-dropdown='false'] .dropdown_wrapper {
+    @apply light:border-neutral-6 dark:border-neutral-1 rounded-[5em_5em_5em_5em] border-solid border-t-2 border-l-2 border-r-2 border-b-2;
+    transition: 200ms border-radius var(--ease-custom) 250ms, 100ms border-bottom var(--ease-custom) 150ms, 300ms border-color var(--ease-custom) 0ms;
+}
+
+.dropdown_placeholder[data-display-dropdown='true'] .dropdown_wrapper {
+    @apply light:border-neutral-6 dark:border-neutral-1 rounded-[1.5em_1.5em_0em_0em] sm:rounded-[2.5em_2.5em_0em_0em] border-solid border-t-2 border-l-2 border-r-2 border-b-0;
+    transition: 200ms border-radius var(--ease-custom) 0ms, 100ms border-bottom var(--ease-custom) 150ms, 300ms border-color var(--ease-custom) 0ms;
+}
+
+.dropdown_placeholder[data-display-dropdown='false'] .dropdown_icon_line:nth-child(2),
+.dropdown_placeholder[data-display-dropdown='true'] .dropdown_icon_line:nth-child(1) {
+    transform: rotate(-45deg);
+    transition: 200ms transform ease 250ms, 300ms background-color var(--ease-custom) 0s;
+}
+
+.dropdown_placeholder[data-display-dropdown='false'] .dropdown_icon_line:nth-child(1),
+.dropdown_placeholder[data-display-dropdown='true'] .dropdown_icon_line:nth-child(2) {
+    transform: rotate(45deg);
+    transition: 200ms transform ease 250ms, 300ms background-color var(--ease-custom) 0s;
+}
+
+.dropdown_placeholder[data-display-dropdown='false'] .dropdown_selection {
+    transform: scaleY(0);
+    transition: transform 200ms var(--ease-custom) 0ms;
+}
+
+.dropdown_placeholder[data-display-dropdown='true'] .dropdown_selection {
+    transform: scaleY(1);
+    transition: transform 200ms var(--ease-custom) 250ms, background-color 300ms var(--ease-custom) 0s, border-color 300ms var(--ease-custom) 0s;
+}
+
+.dropdown_item {
+    @apply relative w-full light:border-l-neutral-6 dark:border-l-neutral-1 border-l-0 border-solid transition-[border-left] duration-300 ease-custom delay-200 py-(--size-2xs) px-(--size-s);
+}
+
+.dropdown_item:hover {
+    @apply border-l-6 transition-[border-left] duration-200 ease-custom delay-0;
+}
+
+.dropdown_item:nth-child(1):before,
+.dropdown_item::after {
+    @apply absolute bottom-0 left-0 w-full h-0.5 border-dashed border-b-1 light:border-b-neutral-3 dark:border-b-neutral-3 transition-[border-bottom] duration-300 ease-(--ease-custom) delay-0;
+    content: "";
+}
+
+.dropdown_item:nth-child(1):before {
+    @apply top-0;
+}
+
+.dropdown_item:last-of-type {
+    @apply mb-(--size-xs);
+}
+
+.role_picker_checkbox:not(:checked)+.role_picker_wrapper .role_picker_item:nth-child(1),
+.role_picker_checkbox:checked+.role_picker_wrapper .role_picker_item:nth-child(2) {
+    @apply light:text-neutral-1 dark:text-neutral-6 transition-colors duration-300 ease-(--ease-custom);
+}
+
+.role_picker_checkbox:not(:checked)+.role_picker_wrapper .role_picker_item:nth-child(2),
+.role_picker_checkbox:checked+.role_picker_wrapper .role_picker_item:nth-child(1) {
+    @apply light:text-neutral-6 dark:text-neutral-1 transition-colors duration-300 ease-(--ease-custom);
+}
+
+.role_picker_checkbox:checked ~ .role_picker_bg {
+    left: 50%;
+    transition: left 150ms var(--ease-custom) 100ms, background-color 300ms var(--ease-custom) 0ms;
+}
+
+.role_picker_checkbox:not(:checked) ~ .role_picker_bg {
+    left: 0%;
+    transition: left 150ms var(--ease-custom) 100ms, background-color 300ms var(--ease-custom) 0ms;
+}
+
+.download_icon,
+.navigation_icon {
+    @apply h-(--size-2xl) w-auto scale-[1.1];
+}
+
+.download_icon .path,
+.navigation_icon .path {
+    @apply light:fill-neutral-1 dark:fill-neutral-6 duration-300 transition-colors ease-custom;
+}
+
+.download_icon[data-disabled='true'] .circle,
+.navigation_icon[data-disabled='true'] .circle {
+    @apply light:fill-neutral-2 dark:fill-neutral-5 duration-300 transition-colors ease-custom;
+}
+
+.navigation_icon[data-disabled='false'] .circle {
+    @apply light:fill-neutral-6 dark:fill-neutral-1 duration-300 transition-colors ease-custom;
+}
+
+.download_icon[data-disabled='false'] .circle {
+    @apply light:fill-highlight-green dark:fill-highlight-green duration-300 transition-colors ease-custom;
+}
+
+.schedule_wrapper,
+.schedule_wrapper[data-display='false'] {
+    @apply top-[100%] transition-[top] ease-custom duration-600;
+}
+
+.schedule_wrapper[data-display='true'] {
+    @apply top-0 transition-[top] ease-custom duration-600;
+}

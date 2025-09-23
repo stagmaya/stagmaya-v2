@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+@custom-variant light (&:where([data-theme=light], [data-theme=light] *));
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *), @media (prefers-color-scheme: dark));
+
+
+@font-face {
+    font-family: "JUST Regular";
+    src: url("/fonts/just_reg.otf");
+}
+
+@font-face {
+    font-family: "PPD Light";
+    src: url("/fonts/ppd_light.otf");
+}
+
+@font-face {
+    font-family: "PPD Regular";
+    src: url("/fonts/ppd_reg.otf");
+}
+
+@font-face {
+    font-family: "PPD Medium";
+    src: url("/fonts/ppd_med.otf");
+}
+
+@font-face {
+    font-family: "PPD Semibold";
+    src: url("/fonts/ppd_semi_bold.otf");
+}
+
+@font-face {
+    font-family: "PPD Bold";
+    src: url("/fonts/ppd_bold.otf");
+}
+
+:root {
+    --color-white: 240, 240, 240;
+    --color-timberwolf: 210, 210, 210;
+    --color-silver: 160, 160, 160;
+    --color-gray: 120, 120, 120;
+    --color-raisin-black: 70, 70, 70;
+    --color-black: 10, 10, 10;
+
+    --color-red: 238, 119, 119;
+    --color-blue: 163, 190, 217;
+    --color-green: 153, 184, 136;
+    --color-yellow: 230, 220, 119;
+    --color-purple: 196, 179, 255;
+
+    --size-2xl: min(80px, 10vmin); /* 20.0 */
+    --size-xl: 72px;  /* 18.0 */   
+    --size-l: 56px;   /* 14.0 */
+    --size-m: 32px;   /* 8.0 */
+    --size-s: 28px;   /* 7.0  */
+    --size-xs: 24px;  /* 6.0  */
+    --size-2xs: 20px; /* 5.0  */
+}
+
+@media screen and (max-height: 920px), 
+screen and (max-width: 768px) {  /* Small devices (phones, tablets, 760px and down) */
+    :root {
+        --size-2xl: min(60px, 10vmin); /* 20.0 */
+        --size-xl: 54px;  /* 18.0 */   
+        --size-l: 42px;   /* 14.0 */
+        --size-m: 24px;   /* 8.0 */
+        --size-s: 21px;   /* 7.0  */
+        --size-xs: 18px;  /* 6.0  */
+        --size-2xs: 15px; /* 5.0  */
+    }
+}
+
+@media screen and (max-height: 720px),
+screen and (max-width: 400px) {  /* Small devices (phones, tablets, 760px and down) */
+    :root {
+        --size-2xl: min(50px, 9vmin); /* 20.0 */
+        --size-xl: 45px;  /* 18.0 */   
+        --size-l: 35px;   /* 14.0 */
+        --size-m: 20px;   /* 8.0 */
+        --size-s: 18px;   /* 7.0  */
+        --size-xs: 16px;  /* 6.0  */
+        --size-2xs: 14px; /* 5.0  */
+    }
+}
+
+@theme {
+    --color-neutral-1: rgba(var(--color-white));
+    --color-neutral-2: rgba(var(--color-timberwolf));
+    --color-neutral-3: rgba(var(--color-silver));
+    --color-neutral-4: rgba(var(--color-gray));
+    --color-neutral-5: rgba(var(--color-raisin-black));
+    --color-neutral-6: rgba(var(--color-black));
+
+    --color-highlight-red: rgba(var(--color-red));
+    --color-highlight-blue: rgba(var(--color-blue));
+    --color-highlight-green: rgba(var(--color-green));
+    --color-highlight-yellow: rgba(var(--color-yellow));
+    --color-highlight-purple: rgba(var(--color-purple));
+
+    --font-just-regular: "JUST Regular", sans-serif;
+    --font-ppd-light: "PPD Light", sans-serif;
+    --font-ppd-regular: "PPD Regular", sans-serif;
+    --font-ppd-medium: "PPD Medium", sans-serif;
+    --font-ppd-semibold: "PPD Semibold", sans-serif;
+    --font-ppd-bold: "PPD Bold", sans-serif;
+
+    --ease-custom: cubic-bezier(.25,.1,.25,1);
+}
+
+@layer base {
+    html,
+    .hide_scrollbar {
+        -ms-overflow-style: none;  /* IE dan Edge */
+        scrollbar-width: none;     /* Firefox */
+    }
+
+    html::-webkit-scrollbar, 
+    .hide_scrollbar::-webkit-scrollbar { display: none; }
+
+    .style_scrollbar::-webkit-scrollbar {
+        width: min(.5rem, 1vmin);
+        height: 0px;
+    }
+
+    @media (hover: hover) {
+        .style_scrollbar::-webkit-scrollbar {
+            height: min(.5rem, 1vmin);
+        }
+    }
+
+    .style_scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-neutral-4 cursor-pointer;
+    }
+
+    html, body { @apply h-dvh w-full font-ppd-regular; }
+
+    /* Disable Select */
+    h1, h2, h3, h4, h5, h6,
+    p, span, img, a {
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+}
+
+@layer utilities {
+    body { @apply light:bg-neutral-1 dark:bg-neutral-6 transition-colors duration-300 ease-custom; }
+
+    .theme-color-1 { @apply light:text-neutral-6 dark:text-neutral-1 transition-colors duration-300 ease-custom; }
+    .theme-color-2 { @apply light:text-neutral-5 dark:text-neutral-2 transition-colors duration-300 ease-custom; }
+    .theme-color-3 { @apply light:text-neutral-4 dark:text-neutral-3 transition-colors duration-300 ease-custom; }
+    .theme-color-4 { @apply light:text-neutral-3 dark:text-neutral-4 transition-colors duration-300 ease-custom; }
+
+    .theme-text-2xl { font-size: var(--size-2xl); line-height: calc(var(--size-2xl) * 1.2);}
+    .theme-text-xl { font-size: var(--size-xl);  line-height: calc(var(--size-xl) * 1.3); }
+    .theme-text-l { font-size: var(--size-l);  line-height: calc(var(--size-l) * 1.3); }
+    .theme-text-m { font-size: var(--size-m);  line-height: calc(var(--size-m) * 1.4); }
+    .theme-text-s { font-size: var(--size-s);  line-height: calc(var(--size-s) * 1.4); }
+    .theme-text-xs { font-size: var(--size-xs);  line-height: calc(var(--size-xs) * 1.5); }
+    .theme-text-2xs { font-size: var(--size-2xs);  line-height: calc(var(--size-2xs) * 1.5); }
+}
+
