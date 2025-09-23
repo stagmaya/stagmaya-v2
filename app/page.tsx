@@ -3,15 +3,18 @@ import Overlay from "./sections/Overlay";
 import Hero from "./sections/Hero";
 import Schedule from "./sections/Schedule";
 import { ScheduleData } from "@/app/types/schedule-data";
+import { GET } from "@/app/api/schedule/route"
 
 export default async function Home() {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/schedule`, {
+    const req = new Request(`${process.env.NEXT_PUBLIC_BASE_URL}/api/schedule`, {
         method: "GET",
         headers: {
-            Authorization: `Bearer ${process.env.SECRET_KEY}`,
+            Authorization: `Bearer ${process.env.SECRET_KEY}`
         },
-        next: { 'revalidate' : 60 }
-    });
+        next: { revalidate: 60 }
+    })
+    
+    const res = await GET(req);
     const data: ScheduleData = await res.json();
 
     return (
