@@ -21,7 +21,7 @@ export default async function Home() {
         <OverlayProvider>
             <Overlay />
             <main className="w-full h-full relative overflow-y-auto hide_scrollbar z-10">
-                <Hero academy_semester={`${data.academic_semester.semester} ${data.academic_semester.year}`}/>
+                <Hero academy_semester={ data.academic_semester }/>
                 <Schedule schedule_data={data}/>
             </main>
         </OverlayProvider>
