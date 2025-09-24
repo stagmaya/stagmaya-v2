@@ -102,7 +102,7 @@ export class PDFGenerator {
                     break;
                 }
 
-                font_size--;
+                font_size -= 0.25;
             }
         }
 
@@ -230,14 +230,14 @@ export class PDFGenerator {
 
             const setScheduleData = (x: number, y: number, title_text: string, detail_text:string) => {
                 const title_font_size = inner_table_height * 0.35;
-                const title_height = inner_table_height * 0.5;
+                const title_height = inner_table_height * 0.4;
                 this.doc.setFont("helvetica", "bold");
                 const title = this.getTextSize(inner_table_width, title_height, title_text, 2, title_font_size);
                 this.doc.setFontSize(title.font_size);
                 this.doc.text(title.text, x + padding, y + this.getTextHeight(title.font_size) + padding);
 
                 const detail_font_size = inner_table_height * 0.28;
-                const detail_height = inner_table_height * 0.45;
+                const detail_height = inner_table_height * 0.6;
                 this.doc.setFont("helvetica", "normal");
                 const detail = this.getTextSize(inner_table_width, detail_height, detail_text, 2, detail_font_size);
                 this.doc.setFontSize(detail.font_size);
