@@ -255,7 +255,7 @@ const Schedule = ({schedule_data}: Props) => {
         if(res.status === 200) {
             const blob = await res.blob();
             const disposition = res.headers.get("Content-Disposition");
-            const filename = disposition ? disposition.split("filename=")[1].replace(/"/g, "") : "Jadwal.pdf";
+            const filename = disposition ? disposition.split("filename=")[1].replace(/"/g, "") : `Jadwal_${data.pdf_data.title}_${data.pdf_data.detail}.pdf`;
             const file = new File([blob], filename, { type: "application/pdf" });
             const url = window.URL.createObjectURL(file);
             
