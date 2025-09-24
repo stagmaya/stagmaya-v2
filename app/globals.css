@@ -144,12 +144,12 @@ screen and (max-width: 400px) {  /* Small devices (phones, tablets, 760px and do
 }
 
 @layer utilities {
-    body { @apply light:bg-neutral-1 dark:bg-neutral-6 transition-colors duration-300 ease-custom; }
+    body { @apply bg-neutral-1 light:bg-neutral-1 dark:bg-neutral-6 transition-colors duration-300 ease-custom; }
 
-    .theme-color-1 { @apply light:text-neutral-6 dark:text-neutral-1 transition-colors duration-300 ease-custom; }
-    .theme-color-2 { @apply light:text-neutral-5 dark:text-neutral-2 transition-colors duration-300 ease-custom; }
-    .theme-color-3 { @apply light:text-neutral-4 dark:text-neutral-3 transition-colors duration-300 ease-custom; }
-    .theme-color-4 { @apply light:text-neutral-3 dark:text-neutral-4 transition-colors duration-300 ease-custom; }
+    .theme-color-1 { @apply text-neutral-6 light:text-neutral-6 dark:text-neutral-1 transition-colors duration-300 ease-custom; }
+    .theme-color-2 { @apply text-neutral-5 light:text-neutral-5 dark:text-neutral-2 transition-colors duration-300 ease-custom; }
+    .theme-color-3 { @apply text-neutral-4 light:text-neutral-4 dark:text-neutral-3 transition-colors duration-300 ease-custom; }
+    .theme-color-4 { @apply text-neutral-3 light:text-neutral-3 dark:text-neutral-4 transition-colors duration-300 ease-custom; }
 
     .theme-text-2xl { font-size: var(--size-2xl); line-height: calc(var(--size-2xl) * 1.2);}
     .theme-text-xl { font-size: var(--size-xl);  line-height: calc(var(--size-xl) * 1.3); }

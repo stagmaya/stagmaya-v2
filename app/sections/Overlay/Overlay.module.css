@@ -1,7 +1,7 @@
 @reference '../../globals.css';
 
 .overlay {
-    @apply w-full h-full z-100 bg-neutral-1/20 top-0 left-0 fixed light:bg-neutral-1 dark:bg-neutral-6 flex justify-center items-center;
+    @apply w-full h-full z-100 top-0 left-0 fixed bg-neutral-1 light:bg-neutral-1 dark:bg-neutral-6 flex justify-center items-center;
     transition: opacity 500ms var(--ease-custom) 10ms;
 }
 
@@ -22,10 +22,10 @@
 }
 
 .logo {
-    @apply absolute light:stroke-neutral-6 dark:stroke-neutral-1;
+    @apply absolute stroke-neutral-6 light:stroke-neutral-6 dark:stroke-neutral-1;
     height: auto;
+    fill-opacity: 0;
     width: min(29.1vh, 87.5vw);
-    z-index: 1;
     animation: draw_logo 2s var(--ease-custom);
 }
 

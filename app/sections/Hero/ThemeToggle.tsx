@@ -7,8 +7,8 @@ function toggleDarkMode(dark_mode: boolean): void {
 
 const styles = {
     "container": 'h-auto w-(--size-l) cursor-pointer',
-    "bottom": "light:fill-neutral-3 dark:fill-neutral-4 transition-colors duration-300 ease-custom",
-    "bulb": "light:fill-neutral-2 dark:fill-neutral-1 transition-colors duration-300 ease-custom",
+    "bottom": "fill-neutral-3 light:fill-neutral-3 dark:fill-neutral-4 transition-colors duration-300 ease-custom",
+    "bulb": "fill-neutral-2 light:fill-neutral-2 dark:fill-neutral-1 transition-colors duration-300 ease-custom",
     "shine": "fill-neutral-1"
 }
 

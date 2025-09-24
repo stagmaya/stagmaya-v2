@@ -24,8 +24,8 @@ const COLOR_MAPPER = {
         2: "bg-highlight-purple transition-colors ease-custom duration-300"
     },
     "": {
-        1: "light:bg-neutral-6/[10%] dark:bg-neutral-1/[10%] transition-colors ease-custom duration-300",
-        2: "light:bg-neutral-6 dark:bg-neutral-1 transition-colors ease-custom duration-300"
+        1: "bg-neutral-6/[10%] light:bg-neutral-6/[10%] dark:bg-neutral-1/[10%] transition-colors ease-custom duration-300",
+        2: "bg-neutral-6 light:bg-neutral-6 dark:bg-neutral-1 transition-colors ease-custom duration-300"
     }
 }
 
@@ -68,7 +68,7 @@ const ScheduleCardItem = ({ data, is_class }: Props) => {
         const main_schedule: GenericScheduleComponentItem = data.schedule.main;
         const temporary_schedule: GenericScheduleComponentItem = data.schedule.temporary;
         return (
-        <div className={`${styles.schedule_wrapper} shrink-0 w-full min-h-[calc(var(--size-xl)*2)] light:border-neutral-6 dark:border-neutral-1 border-solid border-2 rounded-(--size-2xs) flex flex-col overflow-hidden transition-colors ease-custom duration-300`}>
+        <div className={`${styles.schedule_wrapper} shrink-0 w-full min-h-[calc(var(--size-xl)*2)] border-neutral-6 light:border-neutral-6 dark:border-neutral-1 border-solid border-2 rounded-(--size-2xs) flex flex-col overflow-hidden transition-colors ease-custom duration-300`}>
             <div className='relative w-full h-full flex flex-row'>
                 <div className={`h-full w-(--size-2xs) ${getColor(temporary_schedule)}`}/>
                 <div className={`relative flex flex-col h-full w-full pl-[calc(var(--size-2xs)*0.7)] py-[calc(var(--size-2xs)*0.6)] pr-(--size-2xs) ${getColor(temporary_schedule, 1)}`}>
@@ -78,7 +78,7 @@ const ScheduleCardItem = ({ data, is_class }: Props) => {
                     }
                 </div>
             </div>
-            <div className={`${styles.schedule_prev_change} relative w-full h-full flex flex-row border-t-2 light:border-neutral-6 dark:border-neutral-1 border-dashed`}>
+            <div className={`${styles.schedule_prev_change} relative w-full h-full flex flex-row border-t-2 border-neutral-6 light:border-neutral-6 dark:border-neutral-1 border-dashed`}>
                 <div className={`h-full w-(--size-2xs) ${getColor(main_schedule)}`}/>
                 <div className={`relative flex flex-col h-full w-full pl-[calc(var(--size-2xs)*0.7)] py-[calc(var(--size-2xs)*0.6)] pr-(--size-2xs) ${getColor(main_schedule, 1)}`}>
                     <span className='font-ppd-bold text-[calc(var(--size-2xs)*0.9)] -my-[calc(var(--size-s)*0.05)] theme-color-3 opacity-90'>Sebelum perubahan:</span>
@@ -97,7 +97,7 @@ const ScheduleCardItem = ({ data, is_class }: Props) => {
         );
     }
     return (
-        <div className='shrink-0 w-full min-h-[calc(var(--size-xl)*2)] light:border-neutral-6 dark:border-neutral-1 border-solid border-2 rounded-(--size-2xs) flex flex-row overflow-hidden transition-colors ease-custom duration-300'>
+        <div className='shrink-0 w-full min-h-[calc(var(--size-xl)*2)] border-neutral-6 light:border-neutral-6 dark:border-neutral-1 border-solid border-2 rounded-(--size-2xs) flex flex-row overflow-hidden transition-colors ease-custom duration-300'>
             <div className={`h-full w-(--size-2xs) ${getColor(data.schedule.main)}`}/>
             <div className='relative flex flex-col h-full w-full pl-[calc(var(--size-2xs)*0.7)] py-[calc(var(--size-2xs)*0.6)] pr-(--size-2xs)'>
                 <span className='font-just-regular font-black theme-text-m -my-[calc(var(--size-m)*0.05)] theme-color-1'>{data.period}</span>

@@ -303,11 +303,11 @@ const Schedule = ({schedule_data}: Props) => {
                         <div className={`${styles.dropdown_wrapper} ${styles.schedule_selector_item} ${getCursor()}`} onClick={() => {prereducer({'type': 'SET_DISPLAY_DROPDOWN'})}}>
                             <span className='font-ppd-medium theme-color-1 theme-text-xs wrap-break-word pr-2'>{ state.placeholder }</span>
                             <div className='relative top-0 w-6 h-full flex flex-col justify-center items-center'>
-                                <div className={`${styles.dropdown_icon_line} light:bg-neutral-6 dark:bg-neutral-1 flex absolute h-0.5 w-[min(1em,1.5dvh)] top-[50%] translate-y-[-50%] right-[min(.65em,1dvh)]`}></div>
-                                <div className={`${styles.dropdown_icon_line} light:bg-neutral-6 dark:bg-neutral-1 flex absolute h-0.5 w-[min(1em,1.5dvh)] top-[50%] translate-y-[-50%] right-0`}></div>
+                                <div className={`${styles.dropdown_icon_line} bg-neutral-6 light:bg-neutral-6 dark:bg-neutral-1 flex absolute h-0.5 w-[min(1em,1.5dvh)] top-[50%] translate-y-[-50%] right-[min(.65em,1dvh)]`}></div>
+                                <div className={`${styles.dropdown_icon_line} bg-neutral-6 light:bg-neutral-6 dark:bg-neutral-1 flex absolute h-0.5 w-[min(1em,1.5dvh)] top-[50%] translate-y-[-50%] right-0`}></div>
                             </div>
                         </div>
-                        <ul ref={dropdown_ref} className={`${styles.dropdown_selection} light:border-neutral-6 dark:border-neutral-1 border-solid border-l-2 border-r-2 border-b-2 light:bg-neutral-1 dark:bg-neutral-6 absolute flex flex-col w-full h-[70dvh] z-500 overflow-auto list-none origin-top break-words style_scrollbar`} data-lenis-prevent>
+                        <ul ref={dropdown_ref} className={`${styles.dropdown_selection} border-neutral-6 light:border-neutral-6 dark:border-neutral-1 border-solid border-l-2 border-r-2 border-b-2 bg-neutral-1 light:bg-neutral-1 dark:bg-neutral-6 absolute flex flex-col w-full h-[70dvh] z-500 overflow-auto list-none origin-top break-words style_scrollbar`} data-lenis-prevent>
                             {
                                 state.dropdown_item.map((i) => (
                                     <li key={i.id} className={`${getCursor()} ${styles.dropdown_item}`} onClick={() => {prereducer({'type': 'SET_PLACEHOLDER', 'payload': {'placeholder': i.value, 'id': i.id}})}}>
@@ -325,7 +325,7 @@ const Schedule = ({schedule_data}: Props) => {
                             <span className={`${styles.role_picker_item} font-ppd-medium theme-text-xs wrap-break-word`}>Guru</span>
                             <span className={`${styles.role_picker_item} font-ppd-medium theme-text-xs wrap-break-word`}>Kelas</span>
                         </div>
-                        <div className={`${styles.role_picker_bg} absolute light:bg-neutral-6 dark:bg-neutral-1 h-full top-0 rounded-[5em_5em_5em_5em] w-[calc(50%+2px)] -ml-[1px] -z-1 left-[0%]`}/>
+                        <div className={`${styles.role_picker_bg} absolute bg-neutral-6 light:bg-neutral-6 dark:bg-neutral-1 h-full top-0 rounded-[5em_5em_5em_5em] w-[calc(50%+2px)] -ml-[1px] -z-1 left-[0%]`}/>
                     </div>
                 </div>
             </div>
