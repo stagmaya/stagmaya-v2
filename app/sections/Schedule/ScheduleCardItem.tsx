@@ -8,19 +8,19 @@ interface Props {
 
 const COLOR_MAPPER = {
     "blue" : {
-        1: "bg-highlight-blue/[15%] transition-colors ease-custom duration-300",
+        1: "bg-highlight-blue/[20%] transition-colors ease-custom duration-300",
         2: "bg-highlight-blue transition-colors ease-custom duration-300"
     },
     "green": {
-        1: "bg-highlight-green/[15%] transition-colors ease-custom duration-300",
+        1: "bg-highlight-green/[20%] transition-colors ease-custom duration-300",
         2: "bg-highlight-green transition-colors ease-custom duration-300"
     },
     "yellow": {
-        1: "bg-highlight-yellow/[15%] transition-colors ease-custom duration-300",
+        1: "bg-highlight-yellow/[20%] transition-colors ease-custom duration-300",
         2: "bg-highlight-yellow transition-colors ease-custom duration-300"
     },
     "purple": {
-        1: "bg-highlight-purple/[15%] transition-colors ease-custom duration-300",
+        1: "bg-highlight-purple/[20%] transition-colors ease-custom duration-300",
         2: "bg-highlight-purple transition-colors ease-custom duration-300"
     },
     "": {

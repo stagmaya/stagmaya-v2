@@ -10,8 +10,8 @@ export class ScheduleWeekRangeGenerator {
     sunday: DateTime<boolean>;
 
     constructor(today: DateTime) {
-        if(today.weekday === 7) {
-            this.monday = today.plus({ days: 1 });
+        if(today.weekday >= 6) {
+            this.monday = today.plus({ days: 8 - today.weekday });
             this.sunday = this.monday.plus({ days: 6 });
             this.next_week = {
                 "month_year": this.getMonthYear(this.monday, this.sunday),
