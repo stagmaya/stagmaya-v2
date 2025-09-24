@@ -13,7 +13,7 @@ export function getGoogleDriveID(url: string | undefined):string {
 }
 
 export async function getGoogleSheetsData(id: string, title: string, range: string): Promise<string[][]> {
-    const respond = await fetch(`https://docs.google.com/spreadsheets/d/${id}/gviz/tq?sheet=${title}&range=${range}`, { next: { revalidate: 60 } });
+    const respond = await fetch(`https://docs.google.com/spreadsheets/d/${id}/gviz/tq?sheet=${title}&range=${range}`, { next: { revalidate: 0 } });
     const text = await respond.text();
     const data: GoogleSheetsRespond[] = JSON.parse(text.substring(47).slice(0,-2)).table.rows;
     let result: string[][] = [];

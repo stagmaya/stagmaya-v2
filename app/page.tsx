@@ -11,7 +11,7 @@ export default async function Home() {
         headers: {
             Authorization: `Bearer ${process.env.SECRET_KEY}`
         },
-        next: { revalidate: 60 }
+        next: { revalidate: 3600 }
     })
     
     const res = await GET(req);
