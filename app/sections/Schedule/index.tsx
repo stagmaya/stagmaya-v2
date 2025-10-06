@@ -310,7 +310,7 @@ const Schedule = ({schedule_data}: Props) => {
                         <ul ref={dropdown_ref} className={`${styles.dropdown_selection} border-neutral-6 light:border-neutral-6 dark:border-neutral-1 border-solid border-l-2 border-r-2 border-b-2 bg-neutral-1 light:bg-neutral-1 dark:bg-neutral-6 absolute flex flex-col w-full h-[70dvh] z-500 overflow-auto list-none origin-top break-words style_scrollbar`} data-lenis-prevent>
                             {
                                 state.dropdown_item.map((i) => (
-                                    <li key={i.id} className={`${getCursor()} ${styles.dropdown_item}`} onClick={() => {prereducer({'type': 'SET_PLACEHOLDER', 'payload': {'placeholder': i.value, 'id': i.id}})}}>
+                                    <li key={i.id} className={`${getCursor()} ${styles.dropdown_item}`} onMouseUp={() => {prereducer({'type': 'SET_PLACEHOLDER', 'payload': {'placeholder': i.value, 'id': i.id}})}}>
                                         <p className='theme-color-3 font-ppd-regular theme-text-xs'>{ i.value }</p>
                                     </li>
                                 ))

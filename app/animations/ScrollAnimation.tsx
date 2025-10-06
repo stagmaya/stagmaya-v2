@@ -13,7 +13,8 @@ function SmoothScroll(main: HTMLElement):void {
         const lenis = new Lenis({
             lerp: 0.2,
             wrapper: main,
-            content: main
+            content: main,
+            overscroll: false
         });
 
         ScrollTrigger.config({ ignoreMobileResize: true })
